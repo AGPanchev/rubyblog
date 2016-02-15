@@ -1,2 +1,8 @@
-<h1>Index</h1>
-<h2>Text</h2>
+<h1>Welcome to MyApp</h1>
+<h2>This is some info about MyApp website</h2>
+<% @posts.each do |post| %>
+	<h3><%= link_to post.title,post %></h3>
+	<small><%= post.created_at.strftime("%d %B, %Y") %></small>	
+	<p><%= post.body %></p>	
+	<hr>
+<% end %>
