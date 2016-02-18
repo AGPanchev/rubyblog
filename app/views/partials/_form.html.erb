@@ -1,0 +1,21 @@
+<%= form_for comment, remote: true do |f| %>
+	<%= f.hidden_field :post_id %>
+	<p>		
+		<%= f.text_field :name, placeholder: 'Name', required: true %>
+		<%= f.error_message_on :name %>
+	</p>
+	
+	<p>
+		<%= f.text_field :email, placeholder: 'Email', required: true %>
+		<%= f.error_message_on :email %>
+	</p>
+	
+	<p>
+		<%= f.text_area :body, placeholder: 'Comment', required: true %>
+		<%= f.error_message_on :body %>
+	</p>
+	
+	<p>
+		<%= f.submit "Post Comment" %>
+	</p>	
+<% end %>

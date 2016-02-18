@@ -1,18 +1,29 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>MyApp</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<% flash.each do |key,value| %>
-	<p><%= value %></p>
-<% end %>
-
-<%= yield %>
+<%= render "partials/header" %>
+	<div id="page">
+		<div id="page-bgtop">
+			<div id="page-bgbtm">
+				<div id="content">
+					<div class="flash_message">
+						<% flash.each do |key,value| %>
+							<p><%= value %></p>
+						<% end %>
+					</div>				
+					<%= yield %><!--main view-->	  
+					<div style="clear: both;">&nbsp;</div>
+				</div>
+				<!-- end #content -->  
+				<%= render "partials/sidebar" %>
+				<div style="clear: both;">&nbsp;</div>
+			</div>
+		</div>
+	</div>
+	<!-- end #page-->
+	<div id="footer">
+		<p>&Copy: 2016, MyApp -Sample Project</p>
+	</div>
+	<!-- en #footer-->
+</div>
+<!-- end #wrapper-->
 
 </body>
 </html>

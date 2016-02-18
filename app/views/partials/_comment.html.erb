@@ -1,0 +1,7 @@
+<h3> Comments (<%= @post.comments.count %>)</h3>
+<% @post.comments.each do |comment| %>
+<div class="comment_container">
+	<i class="comment_name"><%= comment.name %>:</i>
+	<div class="comment_body"><%= comment.body %></div>
+</div>
+<% end %>

@@ -1,9 +1,21 @@
-<h1><%= @post.title %></h1>
-<small><%= @post.created_at.strftime("%d %B, %Y") %></small>
-<p><%= @post.body %></p>
-<% if @post.category %>
-	<p>Category: <%= link_to @post.category.name, category_path(:id => @post.category.id) %></p>
-<% else %>
-	<p>No Category</p>
-<% end %>
-<p><%= link_to "Back to Blog Posts", posts_path %></p>
+<div class="post">
+	<h1><%= @post.title %></h1>
+	<small><%= @post.created_at.strftime("%d %B %Y") %></small>
+	<p>Posted by <span style="color: #3D9AD2"><%= @post.admin_user.name %></span></p>
+	<p><%= @post.body %></p>
+	<p>Category:
+		<% if @post.category %>
+			<%= link_to @post.category.name, category_path(:id => @post.category.id) %>
+		<% else %>
+			<span>None</span>
+		<% end %>
+	</p>
+	<p><%= link_to "Back to Blog Posts", posts_path %></p>
+    <div id='comment_div'>
+		<%= render partial: 'partials/comment', locals: { comment: @comment } %>
+	</div>
+	<h3>Add a Comment</h3>
+	<div id='form_div'>
+		<%= render partial: 'partials/form', locals: { comment: @comment } %>
+	</div>
+</div>
