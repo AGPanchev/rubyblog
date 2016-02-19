@@ -1,7 +1,7 @@
 <div class="post">
 	<h1><%= @post.title %></h1>
 	<small><%= @post.created_at.strftime("%d %B %Y") %></small>
-	<p>Posted by <span style="color: #3D9AD2"><%= @post.admin_user.name %></span></p>
+	<p>Posted by <span style="color: #3D9AD2"><%= @post.admin_user.try(:name) %></span></p>
 	<p><%= @post.body %></p>
 	<p>Category:
 		<% if @post.category %>
