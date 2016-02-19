@@ -3,7 +3,7 @@
 		<h2 class="blue"><%= link_to post.title,post %></h2>
 		<div class="entry"><%= post.body %></div>
 		<div class="byline">
-			<div class="meta">Posted by <span style="color: #3D9AD2"><%= post.admin_user.name %></span></div>
+			<div class="meta">Posted by <span style="color: #3D9AD2"><%= post.admin_user.try(:name) %></span></div>
 			<div class="links"><%= link_to "Read More",post %></div><br />
 			<div><%= post.created_at.strftime("%d %B %Y") %></div>
        </div>

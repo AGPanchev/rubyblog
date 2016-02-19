@@ -3,9 +3,7 @@ class CommentsController < InheritedResources::Base
 	@comment = Comment.new(comment_params)
 	
 	@comment.save
-	
-    redirect_to :post	
-	
+		
 	respond_to do |format|
 		format.js
 	end
