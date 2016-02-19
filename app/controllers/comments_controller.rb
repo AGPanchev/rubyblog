@@ -3,10 +3,10 @@ class CommentsController < InheritedResources::Base
 	@comment = Comment.new(comment_params)
 	
 	@comment.save
-		
+	
 	respond_to do |format|
 		format.js
-	end
+	end		
   end
   
   private
