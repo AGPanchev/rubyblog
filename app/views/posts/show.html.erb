@@ -12,7 +12,7 @@
 	</p>
 	<p><%= link_to "Back to Blog Posts", posts_path %></p>
     <div id='comment_div'>
-		<%= render partial: 'partials/comment', locals: { comment: @comment } %>
+		<%= render partial: 'partials/comment', locals: { post: @post } %>
 	</div>
 	<h3>Add a Comment</h3>
 	<div id='form_div'>

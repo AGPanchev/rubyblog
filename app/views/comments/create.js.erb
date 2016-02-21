@@ -1,2 +1,8 @@
+<% if @comment.new_record?  %>
 $('#form_div').html('<%= j(render partial:'partials/form', locals: {comment: @comment}) %>');
-$('#comment_div').html('<%= j(render partial:'partials/comment', locals: {comment: @comment}) %>');
+
+<% else %>
+$('#comment_div').html('<%= j(render partial:'partials/comment', locals: {post: @comment.post}) %>');
+$('#form_div').html('<%= j(render partial:'partials/form', locals: {comment: Comment.new(post: @comment.post)}) %>');
+
+<% end %>

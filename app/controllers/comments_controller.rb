@@ -4,6 +4,7 @@ class CommentsController < InheritedResources::Base
 	
 	@comment.save
 	
+	
 	respond_to do |format|
 		format.js
 	end		
