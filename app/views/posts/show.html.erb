@@ -2,7 +2,7 @@
 	<h1><%= @post.title %></h1>
 	<small><%= @post.created_at.strftime("%d %B %Y") %></small>
 	<p>Posted by <span style="color: #3D9AD2"><%= @post.admin_user.try(:name) %></span></p>
-	<p class="pre_wrap"><%= @post.body %></p>
+	<p style="white-space: pre-wrap;"><%= @post.body %></p>
 	<p>Category:
 		<% if @post.category %>
 			<%= link_to @post.category.name, category_path(:id => @post.category.id) %>
